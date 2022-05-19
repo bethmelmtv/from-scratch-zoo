@@ -1,7 +1,7 @@
 
 export default function OpenSign({ isOpen }) {
   return (
-    <p>
+    <p className= 'opensign'>
       {isOpen && 'Were Open!'}
       {!isOpen && 'Were Closed!'}
     </p>

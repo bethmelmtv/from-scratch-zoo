@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function Parade({ animalsEl }) {
   return (
-    <div className= 'animal'> 
+    <div className= 'animals'> 
       {animalsEl.map((animal) => <AnimalEmoji key={animal} animal={animal} />)}
     </div>
   );

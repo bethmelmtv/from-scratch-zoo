@@ -1,62 +1,38 @@
-// import logo from './logo.svg';
-import './App.css';
-import Parade from './Parade.js';
-import OpenSign from './OpenSign.js';
-import { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-function App() {
-  const [kenanandkel, setKenanandkelsize] = useState(10);
-  const [catdog, setCatdogsize] = useState(10);
-  const [animals, setAnimal] = useState(['cat']);
-  const [isOpen, setisOpen] = useState(false);
-
-  const ATTACK = 1;
-
+export default function App() {
   return (
-    <div className="App">
-      <div className="catdog">
-        <img src="catdog.png" style={{ width: catdog * 10 }} />
-        <div className="buttons" />
-        <button onClick={() => setCatdogsize(catdog + ATTACK)}>CatDog did some good deeds!</button>
-        <button onClick={() => setCatdogsize(catdog - ATTACK)}>
-          CatDog was sassy to the animals today.
-        </button>
-      </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/users">Users</Link>
+            </li>
+          </ul>
+        </nav>
 
-      <div className="kenanandkel">
-        <img src="kenanandkel.png" style={{ width: kenanandkel * 10 }} />
-        <div className="buttons" />
-        <button onClick={() => setKenanandkelsize(kenanandkel + ATTACK)}>
-          Kenan Kel didnt poison the animals
-        </button>
-        <button onClick={() => setKenanandkelsize(kenanandkel - ATTACK)}>
-          Kenan and Kel did poison some animals by mistake.
-        </button>
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/users">
+            <Users />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
       </div>
-
-      <div className="sign">
-        <OpenSign isOpen={isOpen} />
-        <div className="buttons">
-          <h1>Welcome to the 90s Zoo! </h1>
-          <h2>Maintained by your fav 90s all stars!</h2>
-          <button onClick={() => setisOpen(true)}>Open Zoo!</button>
-          <button onClick={() => setisOpen(false)}>Close Zoo!</button>
-        </div>
-      </div>
-
-      <div className="animalparade">
-        <Parade animalsEl = { animals } />
-        <div className="buttons" />
-        <button onClick={() => {animals.push('cat'); setAnimal([...animals]);}}> Add Cat </button>
-        <button onClick={() => {animals.push('dog'); setAnimal([...animals]);}}>Add Dog</button>
-        <button onClick={() => {animals.push('bear'); setAnimal([...animals]);}}>Add Bear</button>
-        <button onClick={() => {animals.push('moose'); setAnimal([...animals]);}}>Add Moose</button>
-      </div>
-    </div>
+    </Router>
   );
 }
-
-export default App;
-
-
-{/* {/another option * onClick={() => {traffic.push(‘motorcycle’); setTraffic([…traffic]) */} 
