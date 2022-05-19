@@ -1,8 +1,1 @@
-
-
-export const animals = [
-  'cat',
-  'dog',
-  'bear',
-  'moose',
-];
+export const animals = ['cat', 'dog', 'bear', 'moose'];

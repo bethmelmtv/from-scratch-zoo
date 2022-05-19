@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Parade from './Parade.js';
 import OpenSign from './OpenSign.js';
-import { CustomButton } from './CustomCustomButton';
+import CustomButton from './CustomButton';
 
 function App() {
   const [kenanandkel, setKenanandkelsize] = useState(10);
@@ -17,14 +17,13 @@ function App() {
       <div className="fight">
         <div className="monster">
           <img src="catdog.png" style={{ width: catdog * 10 }} />
+
           <div className="CustomButton">
             <CustomButton
               className="CustomButton"
-              variant="contained"
               onClick={() => setCatdogsize(catdog + ATTACK)}
-            >
-              CatDog did some good deeds!
-            </CustomButton>
+              text="CatDog did some good deeds!"
+            />
             <CustomButton className="CustomButton" onClick={() => setCatdogsize(catdog - ATTACK)}>
               CatDog was sassy to the animals today.
             </CustomButton>
@@ -34,21 +33,24 @@ function App() {
         <div className="monster">
           <img src="kenanandkel.png" style={{ width: kenanandkel * 10 }} />
           {/* <div className="CustomButton"> */}
+
           <CustomButton
             className="CustomButton"
             onClick={() => setKenanandkelsize(kenanandkel + ATTACK)}
-          >
-            Kenan Kel didnt poison the animals
-          </CustomButton>
+            text="Kenan Kel didnt poison the animals"
+          />
+
           <CustomButton
             className="CustomButton"
             onClick={() => setKenanandkelsize(kenanandkel - ATTACK)}
           >
             Kenan and Kel did poison some animals by mistake.
           </CustomButton>
+
           {/* </div> */}
         </div>
       </div>
+
       <div className="verbage">
         <OpenSign isOpen={isOpen} />
         <h1 className="sign">Welcome to the 90s Zoo! </h1>
@@ -94,6 +96,7 @@ function App() {
           >
             Add Bear
           </CustomButton>
+
           <CustomButton
             className="CustomButton"
             onClick={() => {
