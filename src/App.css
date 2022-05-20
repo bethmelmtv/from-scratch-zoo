@@ -1,3 +1,89 @@
+body {
+  background-image: url('./background.png');
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+.opensign {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  width: 120px;
+  padding: 10px;
+  margin: 0px 50px 0px 50px;
+}
+
+.animal {
+  margin: 10px;
+}
+
+.animalparade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.animals {
+  display:flex;
+  justify-content: center;
+  height: 300px;
+  width: 600px;
+  background-color: pink;
+  flex-wrap: wrap;
+  border-radius: 15px;
+}
+
+.fight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin: 40px;
+  width: 80%;
+  border-radius: 50px;
+  background-color: rgba(255, 170, 51, .7) 
+} 
+
+.verbage {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.monster { 
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+} 
+
+.button {
+  border-radius: 10px;
+  background-color:powderblue;
+  color: orange;
+}
+
+.h1 .sign {
+  background-color: #61dafb;
+}
+
+
+.opensign {
+  border-radius: 15px;
+  height: 40px;
+  background-color: #61dafb;
+  text-align: center;
+  font-weight: bold;
+}
+
+.div {
+  display: flex;
+  flex: wrap;
+}
+
 .App {
   text-align: center;
 }
